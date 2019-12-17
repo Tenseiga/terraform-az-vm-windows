@@ -1,5 +1,5 @@
 resource "azurerm_virtual_machine_extension" "virtual_machine_extension" {
-  count                = (length(var.file_uris) >= 0) ? 1 : 0
+  count                = (length(var.file_uris) > 0) ? 1 : 0
   name                 = "CustomScriptExtension"
   location             = azurerm_virtual_machine.vm.location
   resource_group_name  = azurerm_virtual_machine.vm.resource_group_name
